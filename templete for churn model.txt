@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="tenure">Tenure (in months):</label>
+            <input type="number" name="tenure" required>
+
+            <label for="monthlycharges">Monthly Charges:</label>
+            <input type="number" step="0.01" name="monthlycharges" required>
+
+            <label for="totalcharges">Total Charges:</label>
+            <input type="number" step="0.01" name="totalcharges" required>
+
+            <label for="contract">Contract Type:</label>
+            <select name="contract" required>
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select>
+
+            <label for="internetservice">Internet Service:</label>
+            <select name="internetservice" required>
+                <option value="DSL">DSL</option>
+                <option value="Fiber optic">Fiber optic</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Add more inputs depending on what features your model expects -->
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h2>Prediction: {{ prediction }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
