@@ -6,7 +6,7 @@ This project uses machine learning to predict customer churn. The goal is to pre
 
 
 want a demo click here 
-https://github.com/KESHAVACHINNA/render-demo
+https://render-demo-1-0dal.onrender.com/
 
 ## Features
 - **Customer Data Input:** Users can enter customer details like tenure, monthly charges, etc.
